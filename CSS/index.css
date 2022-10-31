@@ -1,0 +1,277 @@
+/* 计算器css */
+
+/* 弹性设计body让计算器app居中 */
+body {
+    background-color: rgb(74, 74, 74);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 取消文字选中 */
+    user-select: none;
+}
+
+/* 设计计算器大盒子 */
+#calculator{
+    width: 750px;
+    height: 650px;
+    border: solid 1px rgb(96, 96, 96);
+    box-shadow: 0 0 10px 5px rgb(30, 30, 30);
+    border-radius: 10px;
+    background-color: rgb(26, 32, 49);
+    /* background: linear-gradient(to right bottom,rgb(26, 32, 49,.9),rgb(37, 47, 76,.9)); */
+    color: aliceblue;
+    display: flex;
+}
+
+/* 执行区域 */
+.execution {
+    flex: 1.5;
+    /* border: solid 3px red; */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+/* 试图区域 */
+.view {
+    flex: 1;
+    /* border: solid 3px red; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.execution-head {
+    flex: 1;
+    /* border: solid 1px; */
+    font-size: 20px;
+    display: flex;
+}
+.execution-head-con,
+.execution-head-title {
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.execution-result {
+    /* border: solid 1px; */
+    flex:2.5;
+    display: flex;
+    flex-direction: column;
+}
+.execution-view-save {
+    flex: 1;
+    /* border: solid 1px rgb(65, 227, 53); */
+}
+.execution-view-number {
+    flex: 1;
+    /* border: solid 1px rgb(65, 227, 53); */
+    font-size: 45px;
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+    /* align-items:center; */
+}
+.execution-input {
+    /* border: solid 1px; */
+    flex: 6.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.execution-input-memory {
+    flex: 1;
+    /* border: solid 1px rgb(65, 227, 53); */
+    display: flex;
+}
+.execution-input-memory ul {
+    flex: 1;
+    display: flex;
+}
+.execution-input-memory ul li {
+    flex: 1;
+    /* border: solid 1px rgb(53, 56, 227); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.execution-input-memory ul li:hover {
+    background-color: rgb(62, 68, 82);
+    /* border: solid 1px; */
+}
+.execution-input-bottom {
+    flex: 9;
+    /* border: solid 1px rgb(65, 227, 53); */
+    display: flex;
+}
+
+.execution-input-bottom table {
+    flex: 1;
+    /* border-collapse: collapse; */
+    display: flex;
+}
+.execution-input-bottom table tbody{
+    flex: 1;
+    /* border-collapse: collapse; */
+    display: flex;
+    flex-direction: column;
+}
+.execution-input-bottom table tbody tr {
+    flex: 1;
+    display: flex;
+}
+.execution-input-bottom table tbody td {
+    flex: 1;
+    background-color: rgb(45, 50, 64);
+    border-radius: 5px;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: all 0.1s; */
+}
+.execution-input-bottom table tbody tr:nth-child(6) td:nth-child(4){
+    background-color: rgb(77, 91, 204);
+    /* border: solid 5px; */
+}
+.execution-input-bottom table tbody td:hover {
+    background-color: rgb(62, 68, 82);
+    /* border: solid 1px; */
+    transform: translate(0);
+    /* font-size: 24px; */
+}
+
+
+.view-head {
+    flex: 1;
+    /* border: solid 1px; */
+    display: flex;
+}
+
+.view-head-Memory,
+.view-head-history {
+    /* border: solid 1px; */
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.view-head-Memory:hover,
+.view-head-history:hover {
+    color: rgb(215, 215, 215);
+}
+.slider {
+    position: relative;
+}
+.slider::after{
+    content: '';
+    position: absolute;
+    display: block;
+    /* border: solid 2px rgb(76, 194, 255); */
+    background-color: rgb(76, 194, 255);
+    border-radius: 2px;
+    width: 20px;
+    height: 4px;
+    bottom: 8px;
+}
+
+
+
+
+.view-content {
+    flex: 9;
+    /* border: solid 1px; */
+    /* height: 0; */
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    /* height: 0; */
+}
+.view-content ul{
+    overflow-y: auto;
+    flex: 9;
+    /* height: 100%; */
+    /* border: solid 1px; */
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.view-content ul::-webkit-scrollbar {
+    width: 10px;
+}
+/* 滚动槽的样式设置 */
+.view-content ul::-webkit-scrollbar-track {
+    /* -webkit-box-shadow:inset 0 0 6px rgba(255,255,255,0.5); */
+    /* background-color: rgb(53, 218, 20); */
+}
+/* 滚动条滑块的样式设置 */
+.view-content ul::-webkit-scrollbar-thumb {
+	background:rgb(76, 166, 255);
+    border-radius: 5px;
+    /* inset设置到内部 */
+    /* box-shadow:inset -5px 0 10px rgb(131, 255, 236); */
+}
+.view-content ul::-webkit-scrollbar-thumb:window-inactive {
+    /* background:rgba(255,0,0,0.4); */
+}
+.view-content ul li{
+    height: 80px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* border: solid 1px; */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s;
+    transform: translateY(-30px);
+    opacity: 0;
+}
+.showLi {
+    opacity: 1 !important;
+    transform: translateY(0px) scale(1) !important;
+}
+.view-content ul li:hover{
+    border-radius: 5px;
+    background-color: rgb(41, 45, 57);
+}
+.v-c-li-top {
+    flex: 1;
+    color: rgb(178, 178, 178);
+    text-align: right;
+    letter-spacing: 5px;
+    padding-right: 10px;
+}
+.v-c-li-bottom {
+    flex: 1;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    text-align: right;
+    /* letter-spacing: 5px; */
+    padding-right: 10px;
+}
+
+.view-content-clear {
+    flex: 1;
+    display: flex;
+    padding-right: 10px;
+    /* border: solid; */
+    justify-content: end;
+    align-items: center;
+}
+.clear-con {
+    /* padding: 1px; */
+    /* border: solid; */
+    font-size: 30px !important;
+    /* background-color: rgb(157, 152, 152); */
+}
+.clear-con:hover {
+    background-color: rgb(62, 68, 82);
+}
+.icon-ashbin {
+    
+}
+
+
+
